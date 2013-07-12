@@ -2,7 +2,7 @@ DISTRIBUTION_NAME = ole-1.0
 
 # Minifies OLE using Closure Compiler
 minified:
-	java -jar closurecompiler.jar \
+	java -jar ./compiler.jar \
 	--charset 'UTF-8' \
 	--jscomp_error=checkDebuggerStatement \
 	--jscomp_warning=checkVars \
@@ -48,6 +48,6 @@ minified:
 pack_distribution: minified
 	rm -f $(DISTRIBUTION_NAME).zip
 	zip --recurse-paths $(DISTRIBUTION_NAME).zip examples/ lib/ tests/ theme/ documentation.md features.md license.txt Makefile README.md ole.min.js
-	
+
 	rm -f $(DISTRIBUTION_NAME).tar.gz
 	tar -pczf $(DISTRIBUTION_NAME).tar.gz  examples/ lib/ tests/ theme/ documentation.md features.md license.txt Makefile README.md ole.min.js

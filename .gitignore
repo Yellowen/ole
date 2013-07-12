@@ -2,3 +2,5 @@
 
 ole-*.tar.gz
 ole-*.zip
+*.jar
+ole.min.js
